@@ -1,3 +1,5 @@
+# © 2025-2026 Oscar Salvador Fernandez, Buenos Aires, Argentina.
+# Todos los derechos reservados. Ver LICENSE y LEGAL.md.
 # main.py
 """
 Punto de entrada principal y orquestador de la aplicación.
