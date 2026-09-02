@@ -1,63 +1,63 @@
-# Almacén de Don Oscar - Sistema de Punto de Venta (POS)
+# Almacén de Don Oscar 3.0 — Sistema de Punto de Venta (POS)
 
+**Autor:** Oscar Salvador Fernandez · Buenos Aires, Argentina  
+**©** 2025–2026 Oscar Salvador Fernandez. Todos los derechos reservados.  
+**Cita:** Fernandez, Oscar Salvador. *Almacén de Don Oscar 3.0: Sistema de punto de venta.* Buenos Aires, 2025.
 
+Ver [LICENSE](./LICENSE) y [LEGAL.md](./LEGAL.md).
 
-Este es el sistema de gestión para el **Almacén de Don Oscar**. Es una aplicación de consola que hice en Python para manejar todo lo importante de un negocio de barrio: inventario, clientes, ventas y caja. La idea fue hacer algo robusto y fácil de usar, pero sin salir de la terminal.
+Este es el sistema de gestión para el **Almacén de Don Oscar**. Es una aplicación de consola en Python para inventario, clientes, ventas y caja.
 
 ---
 
-## 📋 ¿Qué Hace Este Programa?
+## ¿Qué Hace Este Programa?
 
 *   **Gestiona Productos:** Podés agregar, ver, editar y eliminar productos del inventario. La idea es que el nombre sea bien descriptivo (ej: "Arroz Gallo 1kg") para manejar distintas presentaciones.
-*   **Lleva un Registro de Clientes:** Mantiene una base de datos de tus clientes, con la posibilidad de buscarlos por su ID o DNI (con o sin puntos, ¡simplificado!).
-*   **Procesa Ventas de Forma Rápida:** Tiene un flujo de venta ágil para que el cajero pueda sumar productos al carrito sin pausas innecesarias. Al final, imprime un ticket con todo el detalle.
+*   **Lleva un Registro de Clientes:** Mantiene una base de datos de tus clientes, con la posibilidad de buscarlos por su ID o DNI (con o sin puntos).
+*   **Procesa Ventas de Forma Rápida:** Flujo de venta ágil para el cajero. Al final, imprime un ticket con el detalle.
 *   **Tiene Roles (Admin y Cajero):**
-    *   El **Admin** tiene el control total: gestiona a los cajeros, cambia la configuración (como el % de ganancia o el PIN para cancelar ventas), ve informes y hace backups.
-    *   El **Cajero** tiene acceso a lo que necesita para el día a día: vender, gestionar clientes y productos (con permisos limitados).
-*   **Ofrece Informes Clave:** El admin puede ver un **Dashboard** con un resumen del negocio: cuánto se vendió, qué productos son los más populares y cuáles tienen poco stock. También puede consultar el historial de ventas completo.
-*   **Es Seguro:** Las contraseñas se guardan encriptadas (hasheadas) y las operaciones críticas como las ventas y cancelaciones se manejan con transacciones para que la base de datos nunca quede inconsistente.
+    *   El **Admin** tiene el control total: gestiona cajeros, configuración (ganancia, PIN de cancelación), informes y backups.
+    *   El **Cajero** accede a vender, clientes y productos (permisos limitados).
+*   **Ofrece Informes Clave:** Dashboard de ventas, productos populares y stock bajo. Historial de ventas.
+*   **Es Seguro:** Las contraseñas se guardan hasheadas. Ventas y cancelaciones van en transacciones.
 
 ---
 
-## 🚀 Cómo Ponerlo en Marcha
+## Cómo Ponerlo en Marcha
 
 ### ¿Qué Necesitás?
 
-*   Tener **Python 3** instalado. Si no lo tenés, lo bajás de [python.org](https://www.python.org/downloads/).
+*   **Python 3**. Si no lo tenés: [python.org](https://www.python.org/downloads/).
 
-### Pasos para la Instalación
+### Instalación
 
-1.  **Descargá el Proyecto:** Poné la carpeta `Almacen_Don_Oscar_3.0` en algún lugar cómodo de tu equipo.
-
-2.  **Abrí una Terminal:** En Windows es PowerShell o CMD, en Mac/Linux es Terminal.
-
-3.  **Andá a la Carpeta del Proyecto:** Usá el comando `cd` para navegar hasta donde guardaste la carpeta.
+1.  Descargá el proyecto: carpeta `Almacen_Don_Oscar_3.0`.
+2.  Abrí una terminal (PowerShell, CMD o Terminal).
+3.  Entrá a la carpeta del proyecto:
     ```bash
-    # Ejemplo en Windows:
-    cd C:\Users\TuUsuario\Desktop\Almacen_Don_Oscar_3.0
+    cd Almacen_Don_Oscar_3.0
     ```
-
-4.  **Instalá la Única Dependencia:** El programa usa `colorama` para los colores. Lo instalás con este comando:
+4.  Instalá colorama:
     ```bash
     pip install colorama
     ```
 
-### ¡A Usarlo!
+### Arranque
 
-Para arrancar el programa, asegurate de estar en la carpeta raíz (`aAlmacen_Don_Oscar_3.0/`) y ejecutá:
+Desde la raíz del proyecto:
 
 ```bash
 python main.py
 ```
 
-### 🔐 Primeros Pasos
+### Primeros pasos
 
-Cuando arranques por primera vez, usá estas credenciales:
+Al primer arranque, cambiá las credenciales de administrador en **Panel de Administración → Configuración del Sistema**. No dejes el usuario y la contraseña de fábrica.
 
-*   Usuario: root
-*   Contraseña: toor
+---
 
-Importante: Ni bien entres, andá al Panel de Administración (opción 8)> Configuración del Sistema (opción 4) 
-y cambiá tu nombre, tu contraseña y el PIN de cancelación por unos que te acuerdes.
+## Autoría
 
-Este proyecto fue un desafío para crear una aplicación de consola completa y bien estructurada, pensando siempre en que sea útil y fácil de usar.
+© 2025–2026 Oscar Salvador Fernandez, Buenos Aires, Argentina.  
+Ley 11.723. El derecho nace con la obra. El depósito DNDA (software inédito) es optativo.  
+Contacto: [github.com/Osuki777](https://github.com/Osuki777)
