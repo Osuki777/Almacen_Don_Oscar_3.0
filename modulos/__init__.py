@@ -1,3 +1,5 @@
+# © 2025-2026 Oscar Salvador Fernandez, Buenos Aires, Argentina.
+# Todos los derechos reservados. Ver LICENSE y LEGAL.md.
 # modulos/__init__.py
 """
 Convierte la carpeta 'modulos' en un paquete de Python.
