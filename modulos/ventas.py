@@ -1,3 +1,5 @@
+# © 2025-2026 Oscar Salvador Fernandez, Buenos Aires, Argentina.
+# Todos los derechos reservados. Ver LICENSE y LEGAL.md.
 # modulos/ventas.py
 """
 Este módulo maneja todo el proceso de ventas y caja.
