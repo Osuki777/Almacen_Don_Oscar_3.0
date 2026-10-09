@@ -1,5 +1,15 @@
 # Almacén de Don Oscar 3.0 — Sistema de Punto de Venta (POS)
 
+![El mostrador de un almacén de barrio, de noche, con el ticket en blanco](docs/portada.jpg)
+
+**La caja del barrio, sin alquilar un sistema.** Stock, clientes, ticket y dos llaves: admin y cajero.
+
+| | |
+|---|---|
+| Para quién | Un almacén que vende en el mostrador y no quiere una mensualidad |
+| Qué incluye | Productos, clientes, ventas, informes y copia de seguridad |
+| Qué no hace | No es una tienda online. No cobra con tarjeta. Corre en la computadora del local |
+
 **Autor:** Oscar Salvador Fernandez · Buenos Aires, Argentina  
 **©** 2025–2026 Oscar Salvador Fernandez. Todos los derechos reservados.  
 **Cita:** Fernandez, Oscar Salvador. *Almacén de Don Oscar 3.0: Sistema de punto de venta.* Buenos Aires, 2025.
