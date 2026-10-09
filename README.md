@@ -14,7 +14,7 @@
 **©** 2025–2026 Oscar Salvador Fernandez. Todos los derechos reservados.  
 **Cita:** Fernandez, Oscar Salvador. *Almacén de Don Oscar 3.0: Sistema de punto de venta.* Buenos Aires, 2025.
 
-Ver [LICENSE](./LICENSE) y [LEGAL.md](./LEGAL.md).
+No es software libre ni de código abierto. Ver [LICENSE](./LICENSE) y [LEGAL.md](./LEGAL.md).
 
 Este es el sistema de gestión para el **Almacén de Don Oscar**. Es una aplicación de consola en Python para inventario, clientes, ventas y caja.
 
