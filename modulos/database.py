@@ -37,6 +37,8 @@ def crear_schema(conn):
     sola vez, cuando el programa detecta que el archivo .db no existe.
     Define las tablas, sus columnas y las relaciones entre ellas.
     """
+    from seguridad_credenciales import pedir_alta_inicial
+    username, password_hash, pin = pedir_alta_inicial()
     print("ℹ️ Creando esquema de la base de datos por primera vez...")
     cursor = conn.cursor()
     schema_sql = """
@@ -50,10 +52,10 @@ def crear_schema(conn):
     cursor.executescript(schema_sql)
     
     print("ℹ️ Insertando datos iniciales...")
-    cursor.execute("INSERT OR IGNORE INTO usuarios (username, password_hash, nombre_completo, rol) VALUES (?, ?, ?, ?)", (config.ADMIN_USERNAME_INICIAL, config.ADMIN_PASSWORD_INICIAL, 'Administrador del Sistema', 'admin'))
+    cursor.execute("INSERT OR IGNORE INTO usuarios (username, password_hash, nombre_completo, rol) VALUES (?, ?, ?, ?)", (username, password_hash, 'Administrador del Sistema', 'admin'))
     cursor.execute("INSERT OR IGNORE INTO clientes (id, nombre, dni) VALUES (?, ?, ?)", (1, 'Consumidor Final', '00000000'))
     cursor.execute("INSERT OR IGNORE INTO configuracion (clave, valor) VALUES (?, ?)", ('ganancia_global', str(config.PORCENTAJE_GANANCIA_GLOBAL_INICIAL)))
-    cursor.execute("INSERT OR IGNORE INTO configuracion (clave, valor) VALUES (?, ?)", ('clave_cancelacion', config.CLAVE_CANCELACION_INICIAL))
+    cursor.execute("INSERT OR IGNORE INTO configuracion (clave, valor) VALUES (?, ?)", ('clave_cancelacion', pin))
     conn.commit()
     print("✅ Base de datos creada y configurada exitosamente.")
 
@@ -66,12 +68,16 @@ def inicializar_db():
     para construir la base de datos desde cero.
     """
     db_path = os.path.join(os.path.dirname(__file__), '..', config.DB_NAME)
-    db_existe = os.path.exists(db_path)
     conn = conectar_db()
-    if not db_existe:
-        crear_schema(conn)
-    else:
-        print("ℹ️ Conectado a la base de datos existente.")
+    try:
+        table = conn.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='usuarios'").fetchone()
+        if not table or conn.execute("SELECT COUNT(*) FROM usuarios").fetchone()[0] == 0:
+            crear_schema(conn)
+        else:
+            print("ℹ️ Conectado a la base de datos existente.")
+    except BaseException:
+        conn.close()
+        raise
     return conn
 
 # --- A partir de aquí, las funciones son las "herramientas" que usan los otros módulos ---
