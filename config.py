@@ -14,11 +14,11 @@ BACKUP_DIR = "backups"
 
 # Credenciales iniciales del administrador
 ADMIN_USERNAME_INICIAL = "root"
-ADMIN_PASSWORD_INICIAL = "toor"
+ADMIN_PASSWORD_INICIAL = None  # Compatibilidad de nombre; no se utiliza como credencial.
 
 # Configuración de negocio inicial
 PORCENTAJE_GANANCIA_GLOBAL_INICIAL = 0.30  # 30%
-CLAVE_CANCELACION_INICIAL = "1234"
+CLAVE_CANCELACION_INICIAL = None  # Se solicita un PIN propio al crear la base.
 
 # Nombre del programa para mostrar en mensajes finales, esto es modificable facilmente en entorno real... (banner en ascii creado facil en www.asciiart.eu)
 NOMBRE_PROGRAMA = "Almacén Don Oscar"

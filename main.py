@@ -9,6 +9,7 @@ Se encarga de inicializar los módulos, manejar el ciclo de vida
 No contiene lógica de negocio.
 """
 import sys
+import getpass
 sys.path.append(sys.path[0])
 
 import config
@@ -66,11 +67,17 @@ def main():
     """
     Ejecuta el ciclo de vida completo de la aplicación.
     """
-    conn = db.inicializar_db()
-    usr_logueado = auth.login(conn)
-    if usr_logueado:
-        menu_principal(conn, usr_logueado)
-    conn.close()
+    conn = None
+    try:
+        conn = db.inicializar_db()
+        usr_logueado = auth.login(conn)
+        if usr_logueado:
+            menu_principal(conn, usr_logueado)
+    except (EOFError, KeyboardInterrupt, getpass.GetPassWarning):
+        print("\nInicio cancelado. No se abrió una sesión.")
+    finally:
+        if conn is not None:
+            conn.close()
     ui.limpiar_pantalla()
     ui.imprimir_exito(f"Gracias por usar {config.NOMBRE_PROGRAMA}.")
 

@@ -1,0 +1,36 @@
+
+
+# Criterio común de publicación: secretos y datos de uso fuera del repositorio.
+.env
+.env.*
+!.env.example
+!.env.sample
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.key
+*.mobileprovision
+**/key.properties
+**/keystore.properties
+.local-signing/
+signing/
+private/
+*.pgbackup
+*.pgenc
+*.backup
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+backups/
+respaldos/
+exports/
+__pycache__/
+*.py[cod]
+node_modules/
+**/.gradle/
+**/local.properties
+.DS_Store
+# .gitignore no elimina archivos ya versionados ni controla cargas web.

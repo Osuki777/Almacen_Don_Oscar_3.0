@@ -29,7 +29,7 @@ Este es el sistema de gestión para el **Almacén de Don Oscar**. Es una aplicac
     *   El **Admin** tiene el control total: gestiona cajeros, configuración (ganancia, PIN de cancelación), informes y backups.
     *   El **Cajero** accede a vender, clientes y productos (permisos limitados).
 *   **Ofrece Informes Clave:** Dashboard de ventas, productos populares y stock bajo. Historial de ventas.
-*   **Es Seguro:** Las contraseñas se guardan hasheadas. Ventas y cancelaciones van en transacciones.
+*   **Protección de acceso:** las contraseñas nuevas usan PBKDF2 con salt aleatorio; los hashes antiguos se actualizan al autenticar. Esto no cifra la base SQLite ni certifica la seguridad integral.
 
 ---
 
@@ -62,7 +62,7 @@ python main.py
 
 ### Primeros pasos
 
-Al primer arranque, cambiá las credenciales de administrador en **Panel de Administración → Configuración del Sistema**. No dejes el usuario y la contraseña de fábrica.
+Al primer arranque elegí tu usuario, contraseña y PIN propios. Si actualizás una instalación antigua, los datos se conservan: al autenticar con credenciales de fábrica se exige cambiarlas antes de entrar al menú. Hacé una copia privada de la base antes de actualizar.
 
 ---
 
@@ -71,3 +71,7 @@ Al primer arranque, cambiá las credenciales de administrador en **Panel de Admi
 © 2025–2026 Oscar Salvador Fernandez, Buenos Aires, Argentina.  
 Ley 11.723. El derecho nace con la obra. El depósito DNDA (software inédito) es optativo.  
 Contacto: [github.com/Osuki777](https://github.com/Osuki777)
+
+## Criterios de mantenimiento y publicación
+
+Ver [CRITERIOS.md](CRITERIOS.md), [SECURITY.md](SECURITY.md) y [REVISION_PUBLICACION.md](REVISION_PUBLICACION.md). Autoría y permisos específicos de la obra se conservan según LICENSE y sus avisos. Publicar no convierte el proyecto en código abierto ni acredita auditoría o certificación.
